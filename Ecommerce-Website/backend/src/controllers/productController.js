@@ -35,3 +35,19 @@ export const getAllProduct = async (req, res) => {
   }
 };
 
+// Get Sinle Product
+export const getSingleProduct = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const product = await productModel.findById(id);
+    res.status(200).send({
+      message: "Success true",
+      success: true,
+      product,
+    });
+  } catch (error) {
+    res.status(500).send({
+      message: "Error while getting single product",
+    });
+  }
+};
