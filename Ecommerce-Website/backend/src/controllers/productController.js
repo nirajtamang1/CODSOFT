@@ -24,7 +24,7 @@ export const getAllProduct = async (req, res) => {
   try {
     const products = await productModel.find();
     res.status(200).send({
-      message: "Successfully get all Product",
+      message: "Successfully Get All Product",
       success: true,
       products,
     });
@@ -35,19 +35,54 @@ export const getAllProduct = async (req, res) => {
   }
 };
 
-// Get Sinle Product
+// Get Single Product
 export const getSingleProduct = async (req, res) => {
   try {
     const id = req.params.id;
     const product = await productModel.findById(id);
     res.status(200).send({
-      message: "Success true",
+      message: "Successfully Get single Product",
       success: true,
       product,
     });
   } catch (error) {
     res.status(500).send({
       message: "Error while getting single product",
+    });
+  }
+};
+
+// Update product
+export const updateProduct = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const product = await productModel.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
+    res.status(200).send({
+      message: "Successfully update single product",
+      success: true,
+      product,
+    });
+  } catch (error) {
+    res.status(500).send({
+      message: "Error while updating product",
+    });
+  }
+};
+
+// Delete product
+export const deleteProduct = async (req, res) => {
+  try {
+    const id = req.params.id;
+    await productModel.findByIdAndDelete(id);
+    res.status(200).send({
+      message: "Successfully Delete Single product",
+      success: true,
+    });
+  } catch (error) {
+    res.status(500).send({
+      message: "Error while Deleting product",
     });
   }
 };

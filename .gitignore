@@ -1,2 +1,5 @@
 /Ecommerce-Website/frontend/node_modules
 /Ecommerce-Website/frontend/package-lock.json
+/Ecommerce-Website/backend/node_modules
+/Ecommerce-Website/backend/package-lock.json
+/Ecommerce-Website/backend/.env
