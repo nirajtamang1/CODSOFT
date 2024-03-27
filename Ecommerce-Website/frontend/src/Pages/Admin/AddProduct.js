@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function AddProduct() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
+  const navigate = useNavigate();
   const addProduct = async (e) => {
     e.preventDefault();
     try {
@@ -15,6 +17,7 @@ function AddProduct() {
       );
       if (data?.success == true) {
         alert(`${data?.products?.name} has been created Successfully `);
+        navigate("/product");
       }
     } catch (error) {
       console.log(error);
