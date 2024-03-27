@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../Layouts/Layout";
 import heroSection from "../Assets/images/heroSection.png";
-
+import Product from "../Components/Product";
 function Home() {
   return (
     <Layout>
@@ -31,55 +31,8 @@ function Home() {
       {/* Hero Section End's Here */}
 
       {/* Product Section Starts From Here */}
-      <section className="container">
-        <h1>Product</h1>
-        <div className="card-group my-3">
-          <div className="card mx-2">
-            <img
-              className="card-img-top"
-              src={heroSection}
-              alt="Card image cap"
-            />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-            </div>
-          </div>
-          <div className="card mx-2">
-            <img
-              className="card-img-top"
-              src={heroSection}
-              alt="Card image cap"
-            />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                This card has supporting text below as a natural lead-in to
-                additional content.
-              </p>
-            </div>
-          </div>
-          <div className="card mx-2">
-            <img
-              className="card-img-top"
-              src={heroSection}
-              alt="Card image cap"
-            />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Product />
+      {/* Product Section End here  */}
     </Layout>
   );
 }

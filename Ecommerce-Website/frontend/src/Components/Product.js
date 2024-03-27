@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Layout from "../Layouts/Layout";
 import { useEffect } from "react";
 import heroSection from "../Assets/images/heroSection.png";
 import axios from "axios";
@@ -26,10 +25,10 @@ function Product() {
   };
 
   return (
-    <Layout>
+    <>
       {/* Product Section Starts From Here */}
       <section className="container">
-        {JSON.stringify(product)}
+        {/* {JSON.stringify(product)} */}
         <h1 className="text-center my-5">Product</h1>
         <div className="card-group my-3">
           {product?.map((pro) => (
@@ -49,7 +48,7 @@ function Product() {
         </div>
       </section>
       {/* Product Section End here  */}
-    </Layout>
+    </>
   );
 }
 
