@@ -43,6 +43,9 @@ function Product() {
                 <p className="card-text">{pro.description}</p>
               </div>
               <button onClick={() => buyProduct(pro._id)}>Buy</button>
+              <button onClick={() => buyProduct(pro._id)}>
+                Update Product
+              </button>
             </div>
           ))}
         </div>
