@@ -24,6 +24,20 @@ function Product() {
     console.log(id);
   };
 
+  // Product Delete
+  const deletProduct = async (id) => {
+    try {
+      const { data } = await axios.delete(
+        `http://localhost:8080/product/${id}`
+      );
+      if (data.success == true) {
+        alert("Delete Successfuly");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       {/* Product Section Starts From Here */}
@@ -43,8 +57,8 @@ function Product() {
                 <p className="card-text">{pro.description}</p>
               </div>
               <button onClick={() => buyProduct(pro._id)}>Buy</button>
-              <button onClick={() => buyProduct(pro._id)}>
-                Update Product
+              <button onClick={() => deletProduct(pro._id)}>
+                Delete Product
               </button>
             </div>
           ))}
